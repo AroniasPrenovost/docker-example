@@ -1,13 +1,22 @@
 ## Docker + React boilerplate
 
-### npm start
-
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```sh
+npm start 
+```
 
-### npm test
-### npm run build
-### npm run eject
+```sh
+npm test
+```
+
+```sh
+npm run build 
+```
+
+```sh
+npm run eject 
+```
 
 ### build DEV image 
 ```sh
@@ -31,7 +40,7 @@ port 80: ngnix server default
 docker run -it CONTAINER_ID npm run test
 ```
 
-### executE volumes 
+### execute volumes 
 ```sh 
 docker run -it -p LOCAL_PORT:DOCKER_PORT -v /app/node_modules -v ${PWD}:/app -e CHOKIDAR_USEPOLLING=true CONTAINER_ID
 ```
