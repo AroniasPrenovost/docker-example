@@ -1,48 +1,55 @@
 ## Docker + React boilerplate
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Requires valid Docker ID
 ```sh
-npm start 
+docker login -u {DOCKER ID}
 ```
 
-Run tests
+### Scripts
 ```sh
-docker run {container_id} npm run test -- --coverage 
-```
-
-```sh
-npm run build 
-```
-
-```sh
+npm start
+npm run build  
 npm run eject 
 ```
 
-### build DEV image 
+### Build DEV image 
 ```sh
 docker build -f Dockerfile.dev .
 ```
 
-### build PROD image 
+### Execute tests
+```sh
+docker run {container_id} npm run test -- --coverage 
+```
+
+### Build PROD image 
 ```sh
 docker build .
 ```
 
-### run PROD image 
+### Run an image 
 ```sh
 docker run -it -p 8080:80 {container_id}
 ```
-port 8080: local machine 
-port 80: ngnix server default 
+- port 8080: local machine 
+- port 80: ngnix server default 
 
-### execute tests
-```sh
-docker run -it CONTAINER_ID npm run test
-```
+[http://localhost:8080](http://localhost:8080) 
 
-### execute volumes 
+### Execute volumes 
 ```sh 
 docker run -it -p LOCAL_PORT:DOCKER_PORT -v /app/node_modules -v ${PWD}:/app -e CHOKIDAR_USEPOLLING=true CONTAINER_ID
 ```
+
+### Deployment 
+- GitHub
+- Travis CI
+- AWS 
+
+
+### TravisCI
+
+
+
+
  
